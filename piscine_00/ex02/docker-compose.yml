@@ -12,6 +12,8 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./postgres:/postgres
+      - ./subject/customer:/customer
 
   pgadmin:
     image: dpage/pgadmin4
