@@ -17,7 +17,7 @@ for CSV_FILE in $FOLDER; do
 DROP TABLE IF EXISTS "$TABLE_NAME";
 
 CREATE TABLE "$TABLE_NAME" (
-	product_id BIGINT,
+	product_id INT,
 	category_id BIGINT, 
 	category_code TEXT,
 	brand TEXT
