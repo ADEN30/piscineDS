@@ -19,7 +19,7 @@ DROP TABLE IF EXISTS "$TABLE_NAME";
 CREATE TABLE "$TABLE_NAME" (
 	event_time TIMESTAMP,
 	event_type TEXT,
-	product_id BIGINT,
+	product_id INT,
 	price REAL,
 	user_id BIGINT,
 	user_session UUID
