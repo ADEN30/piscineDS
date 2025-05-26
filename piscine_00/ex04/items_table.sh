@@ -1,14 +1,14 @@
 #!/bin/bash
 
 FOLDER="/item/*.csv"
-TABLE_NAME="data_2022_oct"
+TABLE_NAME="items"
 DB="piscineds"
 USER="postgres"
 
 for CSV_FILE in $FOLDER; do
 
 	FILE_NAME=$(basename "$CSV_FILE" .csv)
-	TABLE_NAME="$FILE_NAME"
+	TABLE_NAME="$FILE_NAME" + "s"
 
 	echo "Importing $CSV_FILE into table $TABLE_NAME..."
 

@@ -41,21 +41,21 @@ echo "Creation des indexs..."
 psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" <<EOF
 -- Étape 2 : Création d'un index pour optimiser la jointure
 CREATE INDEX IF NOT EXISTS idx_customers_product_id ON customers(product_id);
-CREATE INDEX IF NOT EXISTS idx_item_product_id ON item(product_id);
+CREATE INDEX IF NOT EXISTS idx_items_product_id ON items(product_id);
 EOF
 echo "fin de la creation des indexs"
 
 echo "MAJ des donnees"
 
 psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" <<EOF
--- Étape 3 : Mettre à jour les données depuis la table item
+-- Étape 3 : Mettre à jour les données depuis la table items
 UPDATE customers
 SET
-    category_id = item.category_id,
-    category_code = item.category_code,
-    brand = item.brand
-FROM item
-WHERE customers.product_id = item.product_id;
+    category_id = items.category_id,
+    category_code = items.category_code,
+    brand = items.brand
+FROM items
+WHERE customers.product_id = items.product_id;
 EOF
 
 

@@ -1,4 +1,0 @@
-customers avec doublons ->  20692840rows
-sutomers apres le script remove_duplicate -> 19176145 rows
-item -> 109579 rows
-customer doublons + item -> 
