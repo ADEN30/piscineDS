@@ -16,6 +16,7 @@ services:
       - ./postgres:/postgres
       - ./customer:/customer
       - ./item:/item
+      - ./pie.py:/pie.py
     networks: 
       - pg-network
 
